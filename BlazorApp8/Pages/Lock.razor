@@ -1,0 +1,61 @@
+﻿@page "/lock"
+@using BlazorApp8.Commons;
+@using BlazorApp8.Commons.Models;
+
+<div style="position:absolute; top:30%;left:50%; margin: -25px 0 0 -25px">
+    <img src="Image/padlock.png" style="width:25rem"/>
+
+    <div style="position:absolute; left:10%; margin: 10px 0 0 25px">
+        <input type="password" style="text-align:center; width:auto" @bind="model.Password"/>
+        <button class="btn-primary" 
+               style="width:5rem;"
+               @onclick="btnPasswordCheck_Click">
+               확인
+        </button>
+    </div>
+</div>
+
+
+@code {
+    /// <summary>
+    /// 비밀번호 모델
+    /// </summary>
+    PasswordModel model;
+
+    protected override void OnInitialized()
+    {
+        model = new PasswordModel();
+    }
+
+    /// <summary>
+    /// 확인버튼 이벤트처리
+    /// </summary>
+    private void btnPasswordCheck_Click()
+    {
+        PasswordEvent();
+    }
+
+    private void Password_OnKeypress(KeyboardEventArgs args)
+    {
+        if(args.Code == "Enter")
+        {
+            Console.WriteLine($"입력값 : {model.Password}");
+            PasswordEvent();
+        }
+    }
+
+    private void PasswordEvent()
+    {
+        Console.WriteLine(model.Password.ToString());
+        if (Values.PASSWORD.Equals(model.Password.ToUpper()))
+        {
+            NaviManager.NavigateTo("/settings");
+        }
+        else
+        {
+            Console.WriteLine("다름");
+        }
+    }
+
+
+}

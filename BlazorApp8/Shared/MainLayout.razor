@@ -1,0 +1,56 @@
+﻿@inherits LayoutComponentBase
+
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4" style="background-color:#232323; justify-content:center !important">
+            <div>
+                <!--
+                <a href="/fetchdata" target="_blank" style="color:white; align-items:center; margin-block:auto">설정</a>
+                <a href="https://docs.microsoft.com/aspnet/" target="_blank" style="color:white; align-content:center;margin-block:auto">설정1</a>
+                <a href="https://docs.microsoft.com/aspnet/" target="_blank" style="color:white; align-content:center; margin-block:auto">설정2</a>
+                -->
+                <NavLink href="lock" 
+                         style="padding-top:0.5rem;
+                         padding-right:1rem;
+                         padding-right:1rem;
+                         padding-bottom: 0.5rem;
+                         padding-left: 1rem;
+                         text-decoration:none;
+                         color:white">
+                    <span class="oi oi-cog" aria-hidden="true"></span> 설정
+                </NavLink>
+
+                <NavLink href="counter"
+                         style="padding-top:0.5rem;
+                         padding-right:1rem;
+                         padding-right:1rem;
+                         padding-bottom: 0.5rem;
+                         padding-left: 1rem;
+                         text-decoration:none;
+                         color:white">
+                    <span class="oi oi-plus" aria-hidden="true"></span> Counter
+                </NavLink>
+
+                <NavLink href="counter"
+                         style="padding-top:0.5rem;
+                         padding-right:1rem;
+                         padding-right:1rem;
+                         padding-bottom: 0.5rem;
+                         padding-left: 1rem;
+                         text-decoration:none;
+                         color:white">
+                    <span class="oi oi-plus" aria-hidden="true"></span> Counter
+                </NavLink>
+            </div>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
